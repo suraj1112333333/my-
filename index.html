@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            overflow: hidden;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            z-index: 2;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 3rem;
+            animation: heartbeat 1.8s infinite;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #ff6b81;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            transition: 0.3s;
+            box-shadow: 0px 4px 10px rgba(255, 0, 80, 0.3);
+        }
+
+        .btn:hover {
+            background: #ff4757;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes heartbeat {
+            0%, 20%, 50%, 80%, 100% { transform: scale(1); }
+            40% { transform: scale(1.15); }
+            60% { transform: scale(1.10); }
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatUp 5s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 0.8; }
+            100% { transform: translateY(-700px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="hearts"></div>
+
+    <div class="container">
+        <h1> Im sorryyyyy bhavyaaaa😭 </h1>
+        <p> sorryyyyy bhavyaaa plsss maafff krdooo yrrrr meii pareshann krraa thaa tumhee plsss jaannuu ab nahii karugaa yrr pareshannn pakkaa jaanuu baabbuuuu <br>
+        ️tumm tohh merii jaann hoo janemann i loveee youuu soo muchhbh💗💋</p>
+
+        <a href="nextpage.html" class="btn">clickk heree agar maaf krdiya hai tohh🥺</a>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerHTML = "️💗";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = 3 + Math.random() * 3 + "s";
+            document.getElementById("hearts").appendChild(heart);
+
+            setTimeout(() => heart.remove(), 6000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
